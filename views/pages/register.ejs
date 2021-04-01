@@ -1,0 +1,63 @@
+<div class="text-center p-5">
+
+    <form class="form-signin p-5 fadeIn" method="post" action="/register">
+        <img class="mb-4" src="https://raw.githubusercontent.com/dennysjmarquez/portfolio/gh-pages/me.jpg" alt=""
+             width="72" height="72">
+        <div class="mb-3">
+
+            <h1 class="h3 mb-3 font-weight-normal">Registrate</h1>
+
+            <div class="group-inputs-form">
+
+                <label for="inputName" class="sr-only">Name</label>
+                <input
+                        type="text"
+                        id="inputName"
+                        name="name"
+                        class="form-control"
+                        placeholder="Name"
+                        required
+                        autofocus=""
+                        value="Dennys"
+                >
+
+                <label for="inputEmail" class="sr-only">Email address</label>
+                <input
+                        type="email"
+                        id="inputEmail"
+                        name="email"
+                        class="form-control"
+                        placeholder="Email"
+                        required=""
+                        value="dennysjmarquez@gmail.com"
+                >
+
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input
+                        type="password"
+                        id="inputPassword"
+                        name="password"
+                        class="form-control"
+                        placeholder="Password"
+                        required=""
+                        autocomplete="nop"
+                        value="123456"
+
+                >
+
+            </div>
+
+        </div>
+
+        <% if (emailExit) { %>
+            <div class="alert autoHide alert-danger mb-3 mt-3" role="alert">
+                Ya existe un usuario con ese email
+            </div>
+        <% } %>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+
+
+    </form>
+
+</div>

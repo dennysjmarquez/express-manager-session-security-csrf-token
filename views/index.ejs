@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <% if(typeof title === 'undefined') { %>
+        <title>Sesiones con Express, seguridad token CSRF</title>
+    <% } else { %>
+        <title><%= title %></title>
+    <% } %>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles.css">
+
+</head>
+<body class="d-flex flex-column h-100 bg-dark">
+
+<%- include('shared/header', {userLogin}); -%>
+
+<main class="flex-shrink-0">
+
+    <div class="jumbotron p-5 m-0">
+        <div class="container">
+            <h1 class="display-4">Manejo de <strong>Sesiones</strong> en <strong>express.js</strong></h1>
+            <p class="lead m-0">Seguridad Cross-Site Request Forgery (CSRF) y Token CSRF en rutas sensible a ataques
+                CSRF</p>
+        </div>
+    </div>
+
+    <%- include(body); -%>
+
+</main>
+
+<%- include('shared/footer', {userLogin}); -%>
+
+</body>
+</html>

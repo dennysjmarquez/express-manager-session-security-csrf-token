@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="5; url=<%= redirectLink %>"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <title>Cambio de email</title>
+
+    <style>
+        .bg-light-f0f0f2 {
+            background-color: #f0f0f2;
+        }
+
+        .jumbotron {
+            max-width: 600px;
+            padding: 2em;
+            background-color: #fdfdff;
+            border-radius: 0.5em;
+            box-shadow: 2px 3px 7px 2px #00000005
+        }
+    </style>
+
+</head>
+<body class="bg-light-f0f0f2 h-100">
+
+<div class="jumbotron mt-5 mb-5 mx-auto">
+    <h1>Cambio de email</h1>
+    <hr class="my-4">
+
+    <% if (error) { %>
+        <p>Error: <span class="text-danger">No se recibieron los datos del nuevo email.</span></p>
+    <% } %>
+
+    <% if (errorCsrf) { %>
+        <p>Error: <span class="text-danger">No se pudo cambiar su email, Token Csrf invalido.</span></p>
+    <% } %>
+
+    <% if (success) { %>
+        <p class="text-success">Su email fue cambiado.</p>
+    <% } %>
+
+    <p class="lead">Si no se le redirige en cinco segundos, <a href="<%= redirectLink %>">haga clic aquí</a>.</p>
+    
+</div>
+
+</body>
+</html>

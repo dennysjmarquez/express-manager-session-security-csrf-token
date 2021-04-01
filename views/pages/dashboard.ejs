@@ -1,0 +1,24 @@
+<div class="p-5">
+
+    <div class="toast show m-auto fadeIn" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="mr-auto">Datos del usuario en la sesión</strong>
+        </div>
+        <div class="toast-body">
+
+            <table class="table table-bordered">
+
+                <tbody>
+                <% sessionUserData.forEach(([key, value]) =>{ %>
+                    <tr>
+                        <td class="text-left">
+                            <strong><%= key %>:</strong> <%= value %>
+                        </td>
+                    </tr>
+                <% }) %>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

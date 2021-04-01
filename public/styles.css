@@ -1,0 +1,89 @@
+body {
+    padding-top: 3.5rem;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+    background-color: #f5f5f5;
+}
+
+.form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.group-inputs-form input:not(:first-of-type):not(:last-of-type) {
+    border-radius: 0;
+}
+
+.group-inputs-form input:first-of-type {
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.group-inputs-form input:last-of-type {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.footer {
+    background-color: #f5f5f5;
+}
+
+.toast-header {
+    height: 37px;
+}
+
+
+.autoHide {
+
+    animation: fadeOut 0.5s ease-out 2s, cssAnimation 0s ease-in 2.3s;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+}
+
+
+.fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes cssAnimation {
+    to {
+        width: 0;
+        height: 0;
+        visibility: hidden;
+        padding: 0;
+        border: 0;
+        position: absolute;
+        opacity: 0
+    }
+}
